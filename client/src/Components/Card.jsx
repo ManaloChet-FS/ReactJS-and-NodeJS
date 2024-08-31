@@ -29,9 +29,9 @@ export default function Card({ data, setSelectedData, setPopUpMode }) {
         { data.studio && `Studio: ${data.studio.name}` }
         { data.games && `Games:${data.games.map(game => " " + game.name)}` }
       </p>
-      <div>
-        <button onClick={handleUpdate}>Update</button>
-        <button onClick={handleDelete}>Delete</button>
+      <div style={styles.buttonContainer}>
+        <button style={styles.update} onClick={handleUpdate}>Update</button>
+        <button style={styles.delete} onClick={handleDelete}>Delete</button>
       </div>
     </div>
   )
@@ -45,5 +45,31 @@ const styles = {
     background: "#f4f4f4",
     borderRadius: "5px",
     width: "300px"
+  },
+  buttonContainer: {
+    display: "flex",
+    justifyContent: "center",
+    gap: "0.5rem",
+    marginTop: "1rem"
+  },
+  update: {
+    fontSize: "1rem",
+    padding: "0.4rem 0.8rem",
+    background: "#2563eb",
+    border: "none",
+    borderRadius: "5px",
+    cursor: "pointer",
+    fontWeight: "bold",
+    color: "#f4f4f4"
+  },
+  delete: {
+    fontSize: "1rem",
+    padding: "0.4rem 0.8rem",
+    background: "#dc2626",
+    border: "none",
+    borderRadius: "5px",
+    cursor: "pointer",
+    fontWeight: "bold",
+    color: "#f4f4f4"
   }
 }

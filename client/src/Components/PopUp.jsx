@@ -2,6 +2,7 @@ import { DeleteForm, GameForm, StudioForm } from "./index";
 
 export default function PopUp({ collection, popUpMode, selectedData }) {
 
+  // If yearEstablished doesn't exist, it's a game
   const isGame = !selectedData.hasOwnProperty("yearEstablished");
 
   return (
@@ -9,7 +10,7 @@ export default function PopUp({ collection, popUpMode, selectedData }) {
       {popUpMode !== "" && (
         <div style={styles.div}>
           <section style={styles.section}>
-            <h2>{popUpMode}</h2>
+            <h2 style={styles.h2}>{popUpMode}</h2>
             {popUpMode === "Create" && collection === "games" && <GameForm />}
             {popUpMode === "Update" && isGame && <GameForm />}
             {popUpMode === "Create" && collection === "studios" && <StudioForm />}
@@ -43,4 +44,7 @@ const styles = {
     padding: "2rem",
     borderRadius: "5px"
   },
+  h2: {
+    marginBottom: "0.5rem"
+  }
 };

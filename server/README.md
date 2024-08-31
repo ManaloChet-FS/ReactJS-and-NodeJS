@@ -1,16 +1,16 @@
-# Module 3 Branch
+# Game & Studio DB Server
 Search queries and jest tests.
 ## Queries
-- <code>propertyName=value</code> || Returns the document where a property equals the value
+- `propertyName=value` || Returns the document where a property equals the value
 - Comparisons
-  - <code>propertyName[gt]=5</code> || Property value is greater than 5
-  - <code>propertyName[gte]=5</code> || Property value is greater than or equal to 5
-  - <code>propertyName[lt]=5</code> || Property value is less than 5
-  - <code>propertyName[lte]=5</code> || Property value is less than or equal to 5
-- <code>select=propertyOne,propertyTwo</code> || Returns only the properties named in a document
+  - `propertyName[gt]=5` || Property value is greater than 5
+  - `propertyName[gte]=5` || Property value is greater than or equal to 5
+  - `propertyName[lt]=5` || Property value is less than 5
+  - `propertyName[lte]=5` || Property value is less than or equal to 5
+- `select=propertyOne,propertyTwo` || Returns only the properties named in a document
 - Sorting
-  - <code>sort=propertyName</code> || Sorts property in ascending order
-  - <code>sort=-propertyName</code> || Sorts property in descending order
+  - `sort=propertyName` || Sorts property in ascending order
+  - `sort=-propertyName` || Sorts property in descending order
 ## Testing
 Testing is done with Jest, Supertest, and mongodb-memory-server. The testing file is located at app/controllers/gameController.test.js
 ## Dependencies

@@ -3,6 +3,7 @@ import API from "./API";
 import { SideBar, Card, PopUp } from './Components';
 import './App.css'
 
+// Creating context and exporting it
 export const popUpContext = createContext();
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
   const [selectedData, setSelectedData] = useState({});
   const [refresh, setRefresh] = useState(false);
 
+  // Fetches data. Gets called everytime query or refresh changes.
   useEffect(() => {
     async function getData() {
       const response = await API.fetchData(query);
@@ -31,7 +33,7 @@ function App() {
         <section style={styles.wrapper}>
           {data.length > 0 ? data.map(entry => <Card key={entry._id} data={entry} setSelectedData={setSelectedData} setPopUpMode={setPopUpMode} />) : (<><h3 style={styles.noResults}>No results found</h3></>) }
         </section>
-        <popUpContext.Provider value={{popUpMode, setPopUpMode, selectedData, refresh, setRefresh}}>
+        <popUpContext.Provider value={{popUpMode, setPopUpMode, selectedData, setSelectedData, refresh, setRefresh}}>
           <PopUp collection={collection} popUpMode={popUpMode} selectedData={selectedData} />
         </popUpContext.Provider>
       </main>

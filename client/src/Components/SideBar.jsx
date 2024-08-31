@@ -12,7 +12,6 @@ function SideBar({ setQuery, collection, setCollection, setPopUpMode }) {
     e.preventDefault();
     let selectionString = "select=name";
     let sortString = "";
-
     let queryString = [];
 
     if (searchQuery !== "") {
